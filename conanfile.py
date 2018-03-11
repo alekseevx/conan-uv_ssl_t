@@ -20,7 +20,7 @@ class UvSsltConan(ConanFile):
 
     def source(self):
         shutil.rmtree("src", ignore_errors=True)
-                    
+
         tools.get(
             url="https://github.com/indutny/uv_ssl_t/archive/v{ver}.tar.gz".format(ver=self.version),
             sha256="ac1922dd9c534aec2c7d00129d2e46be731ccad83b86a093c22f873094857ce6"
@@ -37,7 +37,6 @@ class UvSsltConan(ConanFile):
     def requirements(self):
         self.requires("cmake_installer/3.10.0@conan/stable", private=True)
         self.requires("OpenSSL/1.0.2n@conan/stable")
-        self.requires("libuv/1.15.0@bincrafters/stable")
         self.requires("uv_link_t/1.0.5@alekseevx/stable")
         self.requires("ringbuffer/1.0.2@alekseevx/stable")
 
